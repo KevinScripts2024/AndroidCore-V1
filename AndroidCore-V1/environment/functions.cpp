@@ -36,6 +36,14 @@ static int getthread() // register the luau first to register the lua state here
 	return 1;
 }
 
+static int identifyexecutor()
+{
+   // will return AndroidCore 1.0.0
+   // lua_pushstring(ls, exploit_configuration::exploit_name.c_str( ));
+   // lua_pushstring(ls, exploit_configuration::exploit_version( ));
+    return 2; 
+}
+
 static const luaL_Reg function[] = { // Should be getting an error because of unregistered luau.
 	{"getgenv", getgenv},
 	{"getreg", getreg},
