@@ -5,6 +5,7 @@
     <ClInclude Include="lua_ui.hpp" />
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="exploit.hpp" />
+    <ClInclude Include="utility.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="NewFilter1">
@@ -14,5 +15,6 @@
   <ItemGroup>
     <ClCompile Include="exploit.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utility.cpp" />
   </ItemGroup>
 </Project>
