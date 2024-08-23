@@ -1,4 +1,4 @@
-# AndroidCore-V1
+# AndroidCore-V1 ( Im going to be actively working on this until i find something else to do. )
 
 # Luau is still NOT registered in this exploit
 
