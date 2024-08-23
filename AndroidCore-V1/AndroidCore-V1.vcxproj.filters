@@ -1,20 +1,116 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="pch.hpp" />
     <ClInclude Include="lua_ui.hpp" />
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="exploit.hpp" />
     <ClInclude Include="utility.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="NewFilter1">
-      <UniqueIdentifier>{4fec9818-7cc7-4d3c-a072-607430ae7567}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="pch.hpp" />
+    <ClInclude Include="checkers.hpp" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\Ast.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\Confusables.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\Lexer.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\Location.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\ParseOptions.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\Parser.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\ParseResult.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\StringUtils.h" />
+    <ClInclude Include="dependencies\luau\Ast\include\Luau\TimeTrace.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\Bytecode.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\BytecodeUtils.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\Common.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\DenseHash.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\ExperimentalFlags.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\Variant.h" />
+    <ClInclude Include="dependencies\luau\Common\include\Luau\VecDeque.h" />
+    <ClInclude Include="dependencies\luau\Compiler\include\luacode.h" />
+    <ClInclude Include="dependencies\luau\Compiler\include\Luau\BytecodeBuilder.h" />
+    <ClInclude Include="dependencies\luau\Compiler\include\Luau\Compiler.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\BuiltinFolding.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\Builtins.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\ConstantFolding.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\CostModel.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\TableShape.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\Types.h" />
+    <ClInclude Include="dependencies\luau\Compiler\src\ValueTracking.h" />
+    <ClInclude Include="dependencies\luau\VM\include\lua.h" />
+    <ClInclude Include="dependencies\luau\VM\include\luaconf.h" />
+    <ClInclude Include="dependencies\luau\VM\include\lualib.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lapi.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lbuffer.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lbuiltins.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lbytecode.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lcommon.h" />
+    <ClInclude Include="dependencies\luau\VM\src\ldebug.h" />
+    <ClInclude Include="dependencies\luau\VM\src\ldo.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lfunc.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lgc.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lmem.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lnumutils.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lobject.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lstate.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lstring.h" />
+    <ClInclude Include="dependencies\luau\VM\src\ltable.h" />
+    <ClInclude Include="dependencies\luau\VM\src\ltm.h" />
+    <ClInclude Include="dependencies\luau\VM\src\ludata.h" />
+    <ClInclude Include="dependencies\luau\VM\src\lvm.h" />
+    <ClInclude Include="checkers\checkers.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="exploit.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="utility.cpp" />
+    <ClCompile Include="checkers.cpp" />
+    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\Ast.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\Confusables.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\Lexer.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\Location.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\Parser.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\StringUtils.cpp" />
+    <ClCompile Include="dependencies\luau\Ast\src\TimeTrace.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\BuiltinFolding.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\Builtins.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\BytecodeBuilder.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\Compiler.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\ConstantFolding.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\CostModel.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\lcode.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\TableShape.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\Types.cpp" />
+    <ClCompile Include="dependencies\luau\Compiler\src\ValueTracking.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lapi.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\laux.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lbaselib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lbitlib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lbuffer.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lbuflib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lbuiltins.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lcorolib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ldblib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ldebug.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ldo.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lfunc.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lgc.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lgcdebug.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\linit.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lmathlib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lmem.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lnumprint.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lobject.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\loslib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lperf.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lstate.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lstring.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lstrlib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ltable.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ltablib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ltm.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\ludata.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lutf8lib.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lvmexecute.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lvmload.cpp" />
+    <ClCompile Include="dependencies\luau\VM\src\lvmutils.cpp" />
+    <ClCompile Include="checkers\checkers.cpp" />
   </ItemGroup>
 </Project>
