@@ -49,4 +49,5 @@ static const luaL_Reg function[] = { // Should be getting an error because of un
 	{"getreg", getreg},
 	{"gettenv", gettenv},
 	{"getthread", getthread},
+        {"identifyexecutor", identifyexecutor},
 }
