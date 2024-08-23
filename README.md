@@ -8,7 +8,7 @@ Nothing much just a arm64 open source Android Executor for people who has small 
 
 Addresses is outdated and can be located on ``xxx/xxx/xxx`` which can be used to update this executor.
 
-To inject in Roblox, find Roblox's APK folder ``lib/`` Now decompile the Roblox's classes.dex and go to ``com/roblox/client/ActivityNativeMain``
+To inject in Roblox, get the library find Roblox's APK folder ``lib/`` Now decompile the Roblox's classes.dex and go to ``com/roblox/client/ActivityNativeMain``
 
 In there find the ``OnCreate`` method and just below it Paste this
 
