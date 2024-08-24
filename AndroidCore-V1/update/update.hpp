@@ -11,10 +11,10 @@ namespace api
 	namespace addresses {
 			auto eLEnc(std::uintptr_t sc)->std::uintptr_t;
 
-			constexpr std::uintptr_t tasksched = 0x4064A72; // unused
+			constexpr std::uintptr_t tasksched = 0x4064A72 + 1; // unused
 
-			constexpr std::uintptr_t getmainstate = 0x24B622C; // "Unable to create a new thread for %s"
-			constexpr std::uintptr_t scriptcontextresume = 0x18E5572; // "$Script"
+			constexpr std::uintptr_t getmainstate = 0x24B622C + 1; // "Unable to create a new thread for %s"
+			constexpr std::uintptr_t scriptcontextresume = 0x18E5572+ 1; // "$Script"
 	}
 
 
