@@ -58,6 +58,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -102,7 +103,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <TargetName>libAndroidCore</TargetName>
+    <TargetName>libAndroidCore-V1</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
   </PropertyGroup>
@@ -160,7 +161,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="checkers\checkers.hpp" />
-    <ClInclude Include="dependencies\luau\Ast\include\Luau\Ast.h" />
+    <ClInclude Include="dependencies\ghc\filesystem.hpp" />
+    <ClInclude Include="dependencies\ghc\fs_fwd.hpp" />
+    <ClInclude Include="dependencies\ghc\fs_impl.hpp" />
+    <ClInclude Include="dependencies\ghc\fs_std.hpp" />
+    <ClInclude Include="dependencies\ghc\fs_std_fwd.hpp" />
+    <ClInclude Include="dependencies\ghc\fs_std_impl.hpp" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Confusables.h" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Lexer.h" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Location.h" />
@@ -207,8 +213,10 @@
     <ClInclude Include="dependencies\luau\VM\src\ltm.h" />
     <ClInclude Include="dependencies\luau\VM\src\ludata.h" />
     <ClInclude Include="dependencies\luau\VM\src\lvm.h" />
+    <ClInclude Include="environment.hpp" />
     <ClInclude Include="execution.hpp" />
     <ClInclude Include="exploit.hpp" />
+    <ClInclude Include="filesystem.hpp" />
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="lua_ui.hpp" />
     <ClInclude Include="pch.hpp" />
@@ -216,8 +224,8 @@
     <ClInclude Include="utility.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cclosure.cpp" />
     <ClCompile Include="checkers\checkers.cpp" />
-    <ClCompile Include="dependencies\luau\Ast\src\Ast.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Confusables.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Lexer.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Location.cpp" />
@@ -266,11 +274,14 @@
     <ClCompile Include="dependencies\luau\VM\src\lvmexecute.cpp" />
     <ClCompile Include="dependencies\luau\VM\src\lvmload.cpp" />
     <ClCompile Include="dependencies\luau\VM\src\lvmutils.cpp" />
-    <ClCompile Include="environment\functions.cpp" />
+    <ClCompile Include="environment.cpp" />
+    <ClCompile Include="environment\functionalities\functions.cpp" />
     <ClCompile Include="execution.cpp" />
     <ClCompile Include="exploit.cpp" />
-    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="file.cpp" />
+    <ClCompile Include="filesystem.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="table.cpp" />
     <ClCompile Include="update.cpp" />
     <ClCompile Include="utility\utility.cpp" />
   </ItemGroup>
