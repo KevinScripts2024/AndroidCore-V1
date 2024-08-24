@@ -24,6 +24,13 @@ identifyexecutor
 getthread
 getrenv
 getreg
+isLuau
 ```
+
+# TODO
+* Exploit the taskscheduler
+* Register luau
+* Register the functions
+* Clean up
 
 **Some of this codes are from the guy named nop**
