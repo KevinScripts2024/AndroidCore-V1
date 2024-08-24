@@ -5,19 +5,19 @@
 #include <lgc.h>
 
 
-static int getgenv(lua_State* ls) // register the luau first to register the lua state here
+static int getgenv(lua_State* ls)
 {
         lua_pushvalue(ls, LUA_GLOBALSINDEX);
 	return 1;
 }
 
-static int getreg(lua_State* ls) // register the luau first to register the lua state here
+static int getreg(lua_State* ls)
 {
 	lua_pushvalue(ls, LUA_REGISTRYINDEX);
 	return 1;
 }
 
-static int gettenv(lua_State* ls) // register the luau first to register the lua state here
+static int gettenv(lua_State* ls)
 {
 	luaL_checktype(ls, 1, LUA_TTHREAD);
 
@@ -28,7 +28,7 @@ static int gettenv(lua_State* ls) // register the luau first to register the lua
 	return 1;
 }
 
-static int getthread(lua_State* ls) // register the luau first to register the lua state here
+static int getthread(lua_State* ls)
 {
 	lua_pushthread(ls);
 	return 1;
@@ -48,6 +48,13 @@ static int isLuau(lua_State* ls)
     return 1;
 }
 
+static int isrbxactive(lua_State* ls)
+{
+    lua_pushboolean(ls, true); 
+    return 1;
+}
+
+
 static const luaL_Reg function[] = { // Should be getting an error because of unregistered luau.
 	{"getgenv", getgenv},
 	{"getreg", getreg},
@@ -55,4 +62,5 @@ static const luaL_Reg function[] = { // Should be getting an error because of un
 	{"getthread", getthread},
         {"identifyexecutor", identifyexecutor},
         {"isLuau", isLuau},
+        {"isrbxactive", isrbxactive},
 }
