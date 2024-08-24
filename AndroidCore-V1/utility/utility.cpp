@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <dlfcn.h>
 
-namespace utility {
+namespace utils {
     const std::string randomStr(std::size_t length) {
         static const char alphabet[] =
             "abcdefghijklmnopqrstuvwxyz"
@@ -110,6 +110,56 @@ namespace utility {
             }
 
             return false;
+        }
+    }
+
+    namespace JNI {
+        JNIEnv* env = nullptr;
+        jobject GlobalContext = nullptr;
+
+        jobject getGlobalContext() {
+            jclass activityThread = env->FindClass("android/app/ActivityThread");
+            jmethodID currentActivityThread = env->GetStaticMethodID(activityThread, "currentActivityThread", "()Landroid/app/ActivityThread;");
+            jobject at = env->CallStaticObjectMethod(activityThread, currentActivityThread);
+
+            jmethodID getApplication = env->GetMethodID(activityThread, "getApplication", "()Landroid/app/Application;");
+            jobject context = env->CallObjectMethod(at, getApplication);
+            return context;
+        }
+
+        void setClipboardData(const std::string& text) {
+            if (!GlobalContext) {
+                std::cerr << " [ JNI ERR ] Failed to get Context. wtf?" << std::endl;
+                exit(999);
+            }
+
+            auto contextClass = env->FindClass("android/content/Context");
+            if (contextClass == nullptr) {
+                std::cerr << "[ JNI ERR ] contextClass was nullptr" << std::endl;
+                return;
+            }
+
+            auto clipboardManagerClass = env->FindClass("android/content/ClipboardManager");
+            if (clipboardManagerClass == nullptr) {
+                std::cerr << "[ JNI ERR ] clipboardManagerClass was nullptr" << std::endl;
+                return;
+            }
+
+            auto clipDataClass = env->FindClass("android/content/ClipData");
+            if (clipDataClass == nullptr) {
+                std::cerr << "[ JNI ERR ] clipDataClass was nullptr" << std::endl;
+                return;
+            }
+
+            auto newPlainTextMethod = env->GetStaticMethodID(clipDataClass, "newPlainText", "(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;");
+            auto setPrimaryClipMethod = env->GetMethodID(clipboardManagerClass, "setPrimaryClip", "(Landroid/content/ClipData;)V");
+            auto getSystemServiceMethod = env->GetMethodID(contextClass, "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
+
+            auto clipboardService = env->CallObjectMethod(GlobalContext, getSystemServiceMethod, env->NewStringUTF("clipboard"));
+
+            auto data = env->NewStringUTF(text.c_str());
+            auto clip = env->CallStaticObjectMethod(clipDataClass, newPlainTextMethod, env->NewStringUTF("MBClip"), data);
+            env->CallVoidMethod(clipboardService, setPrimaryClipMethod, clip);
         }
     }
 }

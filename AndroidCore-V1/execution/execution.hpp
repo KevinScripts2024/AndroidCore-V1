@@ -7,7 +7,6 @@
 #include <mutex>
 #include <functional>
 
-
 namespace exploit
 {
     class bytecode_encoder_t : public Luau::BytecodeEncoder {

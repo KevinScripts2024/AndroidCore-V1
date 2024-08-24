@@ -4,9 +4,7 @@
     <ClInclude Include="lua_ui.hpp" />
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="exploit.hpp" />
-    <ClInclude Include="utility.hpp" />
     <ClInclude Include="pch.hpp" />
-    <ClInclude Include="checkers.hpp" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Ast.h" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Confusables.h" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Lexer.h" />
@@ -56,12 +54,12 @@
     <ClInclude Include="dependencies\luau\VM\src\lvm.h" />
     <ClInclude Include="checkers\checkers.hpp" />
     <ClInclude Include="execution.hpp" />
+    <ClInclude Include="update.hpp" />
+    <ClInclude Include="utility.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="exploit.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="utility.cpp" />
-    <ClCompile Include="checkers.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Ast.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Confusables.cpp" />
@@ -115,5 +113,7 @@
     <ClCompile Include="checkers\checkers.cpp" />
     <ClCompile Include="execution.cpp" />
     <ClCompile Include="environment\functions.cpp" />
+    <ClCompile Include="update.cpp" />
+    <ClCompile Include="utility\utility.cpp" />
   </ItemGroup>
 </Project>

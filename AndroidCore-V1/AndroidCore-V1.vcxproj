@@ -146,7 +146,11 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(StlIncludeDirectories);$(Sysroot)\usr\include;$(Sysroot)\usr\include\$(AndroidHeaderTriple);$(VS_NdkRoot)\sources\android\support\include;%(AdditionalIncludeDirectories);$(MSBuildProjectDirectory)/dependencies/luau/VM/include;$(MSBuildProjectDirectory)/dependencies/luau/VM/src;$(MSBuildProjectDirectory)/dependencies/luau/Ast/include;$(MSBuildProjectDirectory)/dependencies/luau/Compiler/include;$(MSBuildProjectDirectory)/dependencies/luau/Common/include;$(MSBuildProjectDirectory)/dependencies;$(MSBuildProjectDirectory)/dependencies/lz4;$(MSBuildProjectDirectory)/dependencies/imgui;$(MSBuildProjectDirectory)/dependencies/cpr;$(MSBuildProjectDirectory)/dependencies/curl;</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\Users\Nathaniel\source\repos\AndroidCore-V1\AndroidCore-V1\dependencies</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -155,7 +159,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="checkers.hpp" />
     <ClInclude Include="checkers\checkers.hpp" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Ast.h" />
     <ClInclude Include="dependencies\luau\Ast\include\Luau\Confusables.h" />
@@ -209,10 +212,10 @@
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="lua_ui.hpp" />
     <ClInclude Include="pch.hpp" />
+    <ClInclude Include="update.hpp" />
     <ClInclude Include="utility.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="checkers.cpp" />
     <ClCompile Include="checkers\checkers.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Ast.cpp" />
     <ClCompile Include="dependencies\luau\Ast\src\Confusables.cpp" />
@@ -268,7 +271,8 @@
     <ClCompile Include="exploit.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="utility.cpp" />
+    <ClCompile Include="update.cpp" />
+    <ClCompile Include="utility\utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

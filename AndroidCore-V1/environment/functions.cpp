@@ -3,7 +3,6 @@
 #include <lmem.h>
 #include <lgc.h>
 
-
 static int getgenv(lua_State* ls)
 {
     lua_pushvalue(ls, LUA_GLOBALSINDEX);
@@ -37,7 +36,7 @@ static int identifyexecutor(lua_State* ls)
 {
     // will return AndroidCore 1.0.0
     lua_pushstring(ls, exploit_configuration::exploit_name.c_str());
-    lua_pushstring(ls, exploit_configuration::exploit_version());
+    lua_pushstring(ls, exploit_configuration::exploit_version.c_str());
     return 2;
 }
 
@@ -54,12 +53,12 @@ static int isrbxactive(lua_State* ls)
 }
 
 
-static const luaL_Reg function[] = { // Should be getting an error because of unregistered luau.
+static const luaL_Reg function[] = {
     {"getgenv", getgenv},
     {"getreg", getreg},
     {"gettenv", gettenv},
     {"getthread", getthread},
-        {"identifyexecutor", identifyexecutor},
-        {"isLuau", isLuau},
-        {"isrbxactive", isrbxactive},
-}
+    {"identifyexecutor", identifyexecutor},
+    {"isLuau", isLuau},
+    {"isrbxactive", isrbxactive},
+};
