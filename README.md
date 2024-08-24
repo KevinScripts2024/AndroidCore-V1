@@ -24,11 +24,11 @@ getrenv
 getreg
 isLuau
 isrbxactive
+basic file system
 ```
 
 # TODO
 * Exploit the taskscheduler
-* Add file system
 * Better way to exploit scriptcontext
 * Render files
 * Register the functions
