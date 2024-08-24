@@ -17,4 +17,13 @@ const-string v0, "AndroidCore-V1"
 invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 ```
 
+```
+This exploits contains
+getgenv
+identifyexecutor
+getthread
+getrenv
+getreg
+```
+
 **Some of this codes are from the guy named nop**
