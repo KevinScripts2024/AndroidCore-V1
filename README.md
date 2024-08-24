@@ -28,7 +28,7 @@ isrbxactive
 
 # TODO
 * Exploit the taskscheduler
-* Register luau
+* Render files
 * Register the functions
 * Clean up
 
