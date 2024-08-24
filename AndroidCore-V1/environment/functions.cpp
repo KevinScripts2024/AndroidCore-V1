@@ -1,9 +1,9 @@
-/*
+
 #include <lua.h>
 #include <lualib.h>
 #include <lmem.h>
 #include <lgc.h>
-*/
+
 
 static int getgenv(lua_State* ls) // register the luau first to register the lua state here
 {
