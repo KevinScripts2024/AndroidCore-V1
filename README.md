@@ -28,6 +28,8 @@ isrbxactive
 
 # TODO
 * Exploit the taskscheduler
+* Add file system
+* Better way to exploit scriptcontext
 * Render files
 * Register the functions
 * Clean up
