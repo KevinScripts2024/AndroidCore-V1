@@ -14,7 +14,7 @@ namespace api
 			constexpr std::uintptr_t tasksched = 0x4064A72 + 1; // unused
 
 			constexpr std::uintptr_t getmainstate = 0x24B622C + 1; // "Unable to create a new thread for %s"
-			constexpr std::uintptr_t scriptcontextresume = 0x18E5572+ 1; // "$Script"
+			constexpr std::uintptr_t scriptcontextresume = 0x24B7464 + 1; // "$Script"
 	}
 
 
