@@ -204,6 +204,7 @@
     <ClInclude Include="dependencies\luau\VM\src\ltm.h" />
     <ClInclude Include="dependencies\luau\VM\src\ludata.h" />
     <ClInclude Include="dependencies\luau\VM\src\lvm.h" />
+    <ClInclude Include="execution.hpp" />
     <ClInclude Include="exploit.hpp" />
     <ClInclude Include="init_script.hpp" />
     <ClInclude Include="lua_ui.hpp" />
@@ -262,6 +263,8 @@
     <ClCompile Include="dependencies\luau\VM\src\lvmexecute.cpp" />
     <ClCompile Include="dependencies\luau\VM\src\lvmload.cpp" />
     <ClCompile Include="dependencies\luau\VM\src\lvmutils.cpp" />
+    <ClCompile Include="environment\functions.cpp" />
+    <ClCompile Include="execution.cpp" />
     <ClCompile Include="exploit.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />

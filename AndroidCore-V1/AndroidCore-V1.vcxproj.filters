@@ -55,6 +55,7 @@
     <ClInclude Include="dependencies\luau\VM\src\ludata.h" />
     <ClInclude Include="dependencies\luau\VM\src\lvm.h" />
     <ClInclude Include="checkers\checkers.hpp" />
+    <ClInclude Include="execution.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="exploit.cpp" />
@@ -112,5 +113,7 @@
     <ClCompile Include="dependencies\luau\VM\src\lvmload.cpp" />
     <ClCompile Include="dependencies\luau\VM\src\lvmutils.cpp" />
     <ClCompile Include="checkers\checkers.cpp" />
+    <ClCompile Include="execution.cpp" />
+    <ClCompile Include="environment\functions.cpp" />
   </ItemGroup>
 </Project>
